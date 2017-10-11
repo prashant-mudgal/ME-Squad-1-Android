@@ -13,9 +13,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.base_module.Activity.BaseActivity;
 import com.nedbankapp.R;
+import com.nedbankapp.fragments.login.LoginFragment;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
@@ -44,6 +46,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        clearBackStack();
+        pushFragmentDontIgnoreCurrent(new LoginFragment(),FRAGMENT_JUST_REPLACE);
+
+
     }
 
     @Override
