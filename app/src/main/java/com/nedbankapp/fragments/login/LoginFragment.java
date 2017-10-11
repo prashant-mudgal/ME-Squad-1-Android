@@ -59,6 +59,5 @@ public class LoginFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_login, container, false);
     }
 //
-
-
+//
 }
