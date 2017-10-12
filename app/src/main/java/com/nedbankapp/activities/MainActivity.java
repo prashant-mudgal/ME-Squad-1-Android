@@ -1,5 +1,6 @@
 package com.nedbankapp.activities;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,13 +16,14 @@ import android.view.MenuItem;
 
 import com.base_module.Activity.BaseActivity;
 import com.nedbankapp.R;
+import com.nedbankapp.fragments.dashboard.DashboardFragment;
 import com.nedbankapp.fragments.login.LoginFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     @BindView(R.id.toolbar_header)
     Toolbar toolbar_header;
@@ -32,13 +34,23 @@ public class MainActivity extends BaseActivity
     @BindView(R.id.nav_view)
     NavigationView nav_view;
 
-    @BindView(R.id.fab)
-    FloatingActionButton fab;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+         ButterKnife.bind(this);
+        //TEST
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
         ButterKnife.bind(this);
         initComponent();
 
@@ -46,14 +58,6 @@ public class MainActivity extends BaseActivity
 
 
     public void initComponent(){
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         nav_view.setNavigationItemSelectedListener(this);
 
@@ -126,9 +130,6 @@ public class MainActivity extends BaseActivity
         }else{
             toolbar_header.setVisibility(View.GONE);
         }
-
-
     }
-
 
 }
