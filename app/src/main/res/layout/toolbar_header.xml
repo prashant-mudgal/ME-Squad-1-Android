@@ -36,9 +36,7 @@
                 android:minWidth="?attr/actionBarSize"
                 android:scaleType="center"
                 android:src="@drawable/drawer"
-                android:visibility="visible"
-
-                />
+                android:visibility="visible" />
 
             <ImageButton
                 android:id="@+id/ib_back"
@@ -49,6 +47,7 @@
                 android:scaleType="center"
                 android:src="@drawable/back"
                 android:visibility="invisible" />
+
 
         </FrameLayout>
 

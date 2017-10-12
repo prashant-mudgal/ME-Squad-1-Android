@@ -23,7 +23,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener,DashboardFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
+
+    @BindView(R.id.toolbar_header)
+    Toolbar toolbar_header;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawer_layout;
+
+    @BindView(R.id.nav_view)
+    NavigationView nav_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +51,18 @@ public class MainActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        ButterKnife.bind(this);
+        initComponent();
+
+    }
+
+
+    public void initComponent(){
+
+        nav_view.setNavigationItemSelectedListener(this);
 
         clearBackStack();
         pushFragmentDontIgnoreCurrent(new LoginFragment(),FRAGMENT_JUST_REPLACE);
-
 
     }
 
@@ -106,13 +123,13 @@ public class MainActivity extends BaseActivity
         return true;
     }
 
-    public void hideTitle(){
+    public void toShowHideTitle(boolean isToShow){
 
+        if(isToShow){
+            toolbar_header.setVisibility(View.VISIBLE);
+        }else{
+            toolbar_header.setVisibility(View.GONE);
+        }
     }
 
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
 }

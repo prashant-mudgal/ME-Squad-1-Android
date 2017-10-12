@@ -20,7 +20,7 @@ import com.nedbankapp.activities.MainActivity;
 
 public class BaseFragment extends Fragment {
 
-    public BaseActivity mActivity;
+    public MainActivity mActivity;
     public Context mContext;
 
     public BaseFragment() {
@@ -29,7 +29,7 @@ public class BaseFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.mActivity = (BaseActivity) getActivity();
+        this.mActivity = (MainActivity) getActivity();
     }
 
     @Override
