@@ -33,6 +33,8 @@ public class LoginFragment extends BaseFragment {
     @BindView(R.id.ed_pin)
     EditText edPin;
 
+
+    //test
     @BindView(R.id.ed_password)
     EditText edPassword;
 
