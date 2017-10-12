@@ -55,6 +55,7 @@ public class LoginFragment extends BaseFragment {
         }
         mActivity.toShowHideTitle(false);
         //TEST
+        //new
     }
 
     @Override
