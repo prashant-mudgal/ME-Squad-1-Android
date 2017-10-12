@@ -6,21 +6,32 @@
     android:layout_height="match_parent"
     tools:context="com.nedbankapp.activities.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <RelativeLayout
+        android:id="@+id/rl_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.one_im.MainActivity"
+        >
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <include
+            android:id="@+id/toolbar_header"
+            layout="@layout/toolbar_header"
+            android:layout_height="@dimen/toolbar_vertical_height"
+            android:layout_width="fill_parent"
+            android:layout_alignParentTop="true"
+            android:visibility="visible"
+            />
 
-    </android.support.design.widget.AppBarLayout>
+        <include
+            layout="@layout/content_main"
+            android:layout_below="@+id/toolbar_header"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            />
 
-    <include layout="@layout/content_main" />
+    </RelativeLayout>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

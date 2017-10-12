@@ -109,4 +109,10 @@ public class MainActivity extends BaseActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    public void hideTitle(){
+
+    }
+
+
 }
