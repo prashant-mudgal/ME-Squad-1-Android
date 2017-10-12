@@ -1,8 +1,11 @@
 package com.nedbankapp.fragments.common;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 
+import com.base_module.Activity.BaseActivity;
 import com.nedbankapp.activities.MainActivity;
 
 
@@ -17,13 +20,21 @@ import com.nedbankapp.activities.MainActivity;
 
 public class BaseFragment extends Fragment {
 
-    public MainActivity mActivity;
+    public BaseActivity mActivity;
     public Context mContext;
+
+    public BaseFragment() {
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.mActivity = (BaseActivity) getActivity();
+    }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         this.mContext = context;
-        this.mActivity = (MainActivity) getActivity();
     }
 }
