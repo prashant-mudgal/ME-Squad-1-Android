@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NedbankApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="password">Password</string>
+    <string name="continue_label">Continue</string>
+    <string name="pin">Pin</string>
+    <string name="profile">Profile</string>
+    <string name="enter_profile">Please enter profile id</string>
+    <string name="enter_pin">Please enter pin</string>
+    <string name="enter_password">Please enter password</string>
+    <string name="title_activity_main2">Main2Activity</string>
+</resources>
