@@ -54,6 +54,7 @@ public class LoginFragment extends BaseFragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         mActivity.toShowHideTitle(false);
+        //TEST
     }
 
     @Override
