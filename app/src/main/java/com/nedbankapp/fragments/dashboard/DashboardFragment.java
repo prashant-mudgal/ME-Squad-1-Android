@@ -60,6 +60,7 @@ public class DashboardFragment extends BaseFragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        mActivity.toShowHideTitle(true);
     }
 
     @Override
